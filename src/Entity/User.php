@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $subscription_end_at = null;
+    private ?\DateTime $subscription_end_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'users')]
     #[ORM\JoinColumn(nullable: false)]
@@ -187,12 +187,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getSubscriptionEndAt(): ?\DateTimeImmutable
+    public function getSubscriptionEndAt(): ?\DateTime
     {
         return $this->subscription_end_at;
     }
 
-    public function setSubscriptionEndAt(\DateTimeImmutable $subscription_end_at): static
+    public function setSubscriptionEndAt(\DateTime $subscription_end_at): static
     {
         $this->subscription_end_at = $subscription_end_at;
 
