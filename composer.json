@@ -13,6 +13,7 @@
         "doctrine/orm": "^3.1",
         "phpdocumentor/reflection-docblock": "^5.4",
         "phpstan/phpdoc-parser": "^1.28",
+        "phpstan/phpstan": "^1.10",
         "symfony/asset": "6.4.*",
         "symfony/asset-mapper": "6.4.*",
         "symfony/console": "6.4.*",
@@ -95,7 +96,9 @@
         }
     },
     "require-dev": {
+        "phpmd/phpmd": "^2.15",
         "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.9",
         "symfony/browser-kit": "6.4.*",
         "symfony/css-selector": "6.4.*",
         "symfony/debug-bundle": "6.4.*",
