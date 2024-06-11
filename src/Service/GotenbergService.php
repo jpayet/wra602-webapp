@@ -12,23 +12,15 @@ class GotenbergService
     ) {
     }
 
-    public function generatePdfHtml(ParameterBagInterface $parameterBag, $file): string
+    public function generatePdfHtml(ParameterBagInterface $parameterBag, $filePath): string
     {
         $microservice_host = $parameterBag->get('microservice_host');
         $response = $this->client->request(
             'POST',
             $microservice_host.'/generate-pdf-html',
             [
-                'headers' => [
-                    'Content-Type'=>'multipart/form-data'
-                ],
                 'body' => [
-                    'files' => [
-                        'file' => [
-                            'name' => 'file',
-                            'contents' => $file,
-                        ],
-                    ],
+                    'file' => fopen($filePath, 'r')
                 ],
             ]
         );
@@ -36,23 +28,18 @@ class GotenbergService
         return $content;
     }
 
-        public function generatePdfUrl(ParameterBagInterface $parameterBag, $url): string
+    public function generatePdfUrl(ParameterBagInterface $parameterBag, $url): string
     {
         $microservice_host = $parameterBag->get('microservice_host');
         $response = $this->client->request(
             'POST',
             $microservice_host.'/generate-pdf-url',
             [
-                'headers' => [
-                    'Content-Type'=>'multipart/form-data'
-                ],
                 'body' => [
                     'url' => $url,
                 ],
             ]
         );
-
-
 
         $content = $response->getContent();
         return $content;
