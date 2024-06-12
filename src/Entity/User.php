@@ -42,11 +42,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $firstname = null;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column()]
     private ?\DateTime $subscription_end_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'users')]
-    #[ORM\JoinColumn(nullable: true)]
+    #[ORM\JoinColumn()]
     private ?Subscription $subscription = null;
 
     /**
