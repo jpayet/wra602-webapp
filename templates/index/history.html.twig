@@ -1,20 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HistoryController!{% endblock %}
+{% block title %}Historique des PDFs{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Historique des PDFs</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/jpayet/symfony/www/wra602-webapp/src/Controller/HistoryController.php</code></li>
-        <li>Your template at <code>/home/jpayet/symfony/www/wra602-webapp/templates/history/index.html.twig</code></li>
-    </ul>
-</div>
+    <table>
+        <thead>
+        <tr>
+            <th>N°</th>
+            <th>Titre</th>
+            <th>Méthode</th>
+            <th>Date</th>
+            <th>Heure</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, pdf in pdfs %}
+            <tr>
+                <td>{{ key + 1 }}</td>
+                <td>{{ pdf.title }}</td>
+                <td>{{ pdf.method }}</td>
+                <td>{{ pdf.createdAt|date('d/m/Y') }}</td>
+                <td>{{ pdf.createdAt|date('H:i') }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun PDF</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
