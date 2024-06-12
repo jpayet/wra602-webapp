@@ -23,6 +23,14 @@ class GeneratePdfController extends AbstractController
 
     }
 
+    #[Route('/pdf', name: 'app_pdf')]
+    public function index(): Response
+    {
+        return $this->render('index/pdf.html.twig', [
+            'controller_name' => 'GeneratePdfController',
+        ]);
+    }
+
     #[Route('/pdf/generate/url', name: 'app_pdf_generate_url')]
     public function generatePdfUrl(ParameterBagInterface $parameterBag, Request $request): Response
     {
