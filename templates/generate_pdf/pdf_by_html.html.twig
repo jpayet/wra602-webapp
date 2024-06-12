@@ -11,4 +11,10 @@
     {{ form_widget(form) }}
     <button type="submit">Générer</button>
     {{ form_end(form) }}
+
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
 {% endblock %}
