@@ -37,6 +37,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/pdf, roles: ROLE_USER }
          - { path: ^/history, roles: ROLE_USER }
+         - { path: ^/subscription, roles: ROLE_USER }
 
 when@test:
     security:

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abonnements{% endblock %}
+
+{% block body %}
+    <h1>Abonnements</h1>
+
+    <div>
+        {% for subscription in subscriptions %}
+            <div>
+                <h2>{{ subscription.title }}</h2>
+                <p>{{ subscription.pdfLimit }} pdfs par jour</p>
+                {% if subscription.price != 0 %}
+                    <p>{{ subscription.price }} € / mois</p>
+                {% else %}
+                    <p>Gratuit</p>
+                {% endif %}
+                <a class="btn btn-primary {% if app.user.subscription.id == subscription.id %} disabled{% endif %}" href="{{ path('app_subscription_switch', {'id' : subscription.id}) }}">Souscrire</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

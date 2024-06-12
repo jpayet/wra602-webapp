@@ -26,6 +26,7 @@
                     </div>
 
                     <li><a href="{{ path('app_history') }}">Historique</a></li>
+                    <li><a href="{{ path('app_subscription_list') }}">Abonnements</a></li>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
                     {% else %}
