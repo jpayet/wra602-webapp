@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abonnements{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Abonnements</h1>
+
+        <div class="row">
+            {% for subscription in subscriptions %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ subscription.title }}</h2>
+                            <p class="card-text">{{ subscription.pdfLimit }} PDFs par jour</p>
+                            <p class="card-text">{{ subscription.description }}</p>
+                            <p class="card-text">{% if subscription.price != 0 %}{{ subscription.price }} € / mois{% else %}Gratuit{% endif %}</p>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-primary {% if app.user.subscription.id == subscription.id %} disabled{% endif %} mt-auto" href="{{ path('app_subscription_switch', {'id' : subscription.id}) }}">Souscrire</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

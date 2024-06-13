@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique des PDFs{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Historique des PDFs</h1>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Méthode</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, pdf in pdfs %}
+                    <tr>
+                        <td>{{ key + 1 }}</td>
+                        <td>{{ pdf.title }}</td>
+                        <td>{{ pdf.method }}</td>
+                        <td>{{ pdf.createdAt|date('d/m/Y') }}</td>
+                        <td>{{ pdf.createdAt|date('H:i') }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center">Aucun PDF</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

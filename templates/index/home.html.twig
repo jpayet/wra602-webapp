@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <header class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Bienvenue sur PDF Raptor</h1>
+            <p class="lead">Votre solution pour générer des PDFs facilement et rapidement.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Qu'est-ce que PDF Raptor ?</h2>
+                    <p class="lead">PDF Raptor est une plateforme innovante qui vous permet de créer des fichiers PDF à partir d'URL ou de contenu HTML en quelques clics.</p>
+                    <p>Que vous soyez développeur cherchant une solution d'automatisation ou utilisateur occasionnel ayant besoin de générer des documents PDF, PDF Raptor répond à vos besoins.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ asset('images/hero-image-pdf.jpg') }}" class="img-thumbnail" alt="PDF Raptor">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Fonctionnalités</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Génération de PDFs</h3>
+                            <p class="card-text">Créez des fichiers PDF à partir d'URL ou de contenu HTML avec facilité.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Historique des PDFs</h3>
+                            <p class="card-text">Consultez et gérez vos documents PDF générés précédemment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Abonnements flexibles</h3>
+                            <p class="card-text">Choisissez et changez rapidemment d'abonnements pour combler vos besoins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Commencez dès maintenant</h2>
+            <p class="lead">Inscrivez-vous ou connectez-vous pour démarrer avec PDF Raptor et profiter de toutes ses fonctionnalités.</p>
+            <p>
+                <a href="{{ path('app_register') }}" class="btn btn-primary btn-lg me-2">S'inscrire</a>
+                <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-lg">Se connecter</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}

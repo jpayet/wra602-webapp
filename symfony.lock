@@ -272,9 +272,6 @@
             "templates/base.html.twig"
         ]
     },
-    "symfony/ux-turbo": {
-        "version": "v2.16.0"
-    },
     "symfony/validator": {
         "version": "6.4",
         "recipe": {
@@ -311,6 +308,9 @@
         "files": [
             "config/packages/messenger.yaml"
         ]
+    },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.17.0"
     },
     "twig/extra-bundle": {
         "version": "v3.9.0"
