@@ -19,10 +19,11 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('firstname', null, ['label' => 'Prénom'])
             ->add('lastname', null, ['label' => 'Nom'])
-            ->add('email', null, ['label' => 'Email'])
+            ->add('email', null, ['label' => 'Email', 'required' => true])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'required' => true,
                 'label' => 'Mot de passe',
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
