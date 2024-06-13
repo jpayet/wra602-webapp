@@ -65,9 +65,10 @@ class GeneratePdfController extends AbstractController
             $pdf_file = $this->gotenbergService->generatePdfUrl($parameterBag, $url);
             $filename = $this->pdfFileNameGeneratorService->generateFileName();
 
-            //Enregistrement dans la table pdf pour l'historique
+            // Enregistrement table historique && envoi par mail
             if ($pdf_file != null) {
                 $this->pdfHistoryService->savePdf($filename, "url");
+                $this->pdfHistoryService->sendPdf($pdf_file, $filename, $this->getUser());
             }
 
             return new Response($pdf_file, 200, [
@@ -110,6 +111,7 @@ class GeneratePdfController extends AbstractController
 
             if ($pdf_file != null) {
                 $this->pdfHistoryService->savePdf($filename, "html");
+                $this->pdfHistoryService->sendPdf($pdf_file, $filename, $this->getUser());
             }
 
             unlink($filePath);

@@ -1,11 +1,65 @@
-<h1>Hi! Please confirm your email!</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de compte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #343a40;
+        }
+        p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Bonjour ! Veuillez confirmer votre adresse e-mail !</h1>
 
-<p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl|raw }}">Confirm my Email</a>.
-    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
+    <p>
+        Merci de confirmer votre adresse e-mail en cliquant sur le lien suivant : <br><br>
+        <a href="{{ signedUrl|raw }}" class="btn btn-primary">Confirmer mon adresse e-mail</a>.
+        Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+    </p>
 
-<p>
-    Cheers!
-</p>
+    <p>
+        Cordialement,
+        <br>
+        L'équipe de Pdf Raptor.
+    </p>
+
+    <div class="footer">
+        Si vous n'avez pas demandé cet e-mail, veuillez l'ignorer.
+    </div>
+</div>
+</body>
+</html>
