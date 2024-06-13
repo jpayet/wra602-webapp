@@ -10,7 +10,7 @@ describe('Formulaire de Connexion', () => {
         cy.get('button[type="submit"]').click();
 
         // Vérifier que l'utilisateur est connecté
-        cy.contains('Hello HomeController!').should('exist');
+        cy.contains('Bienvenue sur PDF Raptor').should('exist');
     });
 
     it('test 2 - connexion KO', () => {

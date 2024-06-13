@@ -5,7 +5,7 @@ describe('Générer un pdf', () => {
         cy.get('#username').type('jpayet.e2@gmail.com');
         cy.get('#password').type('testest');
         cy.get('button[type="submit"]').click();
-        cy.contains('Hello HomeController!').should('exist');
+        cy.contains('Bienvenue sur PDF Raptor').should('exist');
 
         // Se rendre sur la page de génération de pdf avec une url
         cy.visit('http://127.0.0.1:37385/pdf/generate/url');
@@ -35,7 +35,7 @@ describe('Générer un pdf', () => {
         cy.get('#username').type('jpayet.e2@gmail.com');
         cy.get('#password').type('testest');
         cy.get('button[type="submit"]').click();
-        cy.contains('Hello HomeController!').should('exist');
+        cy.contains('Bienvenue sur PDF Raptor').should('exist');
 
         // Se rendre sur la page de génération de pdf avec un fichier html
         cy.visit('http://127.0.0.1:37385/pdf/generate/html');

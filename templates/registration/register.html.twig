@@ -20,18 +20,23 @@
                         <div class="mb-3">
                             {{ form_label(registrationForm.lastname, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
                             {{ form_widget(registrationForm.lastname, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.lastname) }}
+
                         </div>
                         <div class="mb-3">
                             {{ form_label(registrationForm.firstname, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
                             {{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.firstname) }}
                         </div>
                         <div class="mb-3">
                             {{ form_label(registrationForm.email, 'Email *', {'label_attr': {'class': 'form-label'}}) }}
                             {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.email) }}
                         </div>
                         <div class="mb-3">
                             {{ form_label(registrationForm.plainPassword, 'Mot de passe *', {'label_attr': {'class': 'form-label'}}) }}
                             {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.plainPassword) }}
                         </div>
                         <button type="submit" class="btn btn-primary">S'inscrire</button>
                         {{ form_end(registrationForm) }}
